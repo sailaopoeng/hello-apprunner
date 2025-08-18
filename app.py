@@ -2,13 +2,18 @@ from fastapi import FastAPI, HTTPException, Depends, status
 import os
 from dotenv import load_dotenv
 
+print(f"after import")
+
 load_dotenv()
 
+print(f"before fastapi load")
 app = FastAPI(
     title="Hello App Runner", 
     version="1.0.0",
     description="App runner sample api test"
 )
+
+print(f"before get open ai api")
 
 api_key = os.getenv("OPENAI_API_KEY")
 print(f"Checking OPENAI_API_KEY...")
