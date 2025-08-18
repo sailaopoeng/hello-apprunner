@@ -2,17 +2,18 @@ version: 1.0
 runtime: python311
 build:
   commands:
-    build:
-      - echo "Build command..."
+    build:        
+      - pip3 install -r requirements.txt
 run:
   runtime-version: 3.11
-  pre-run:
-    - echo "Installing dependencies..."
+  pre-run:  
     - pip3 install -r requirements.txt
-
-  command: uvicorn app:app --host 0.0.0.0 --port 8080
-  network:
-    port: 8080
+  command: uvicorn app:app --host 0.0.0.0 --port 8000
+  network: 
+    port: 8000
+    env: PORT  
   env:
     - name: OPENAI_API_KEY
-      value: "66778899"
+      value: "AABBCCDDD"
+    - name: OTHER_KEY
+      value: "55555"
