@@ -1,15 +1,21 @@
-version: 1.0 # version of the specification
-runtime: python3 # runtime to use
+version: 1.0
+runtime: python311
 build:
   commands:
     build:
-      - pip install -r requirements.txt # install dependencies
-
-  env: # define environment variables
-    - name: PORT
-      value: '8080'
-
+      - echo "Build command..."
 run:
-  command: python app.py # command to run fastapi
+  runtime-version: 3.11
+  pre-run:
+    - echo "Installing dependencies..."
+    - pip3 install -r requirements.txt
+
+  command: uvicorn app:app --host 0.0.0.0 --port 8080
   network:
-    port: 8080 # port AppRunner will expose
+    port: 8080
+  env:
+    - name: OPENAI_API_KEY
+      value: "66778899"
+  secrets:
+    - name: OPENAI_API_KEY
+      value-from: "112233"
