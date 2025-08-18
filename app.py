@@ -1,3 +1,4 @@
+print(f"all start")
 from fastapi import FastAPI, HTTPException, Depends, status
 import os
 from dotenv import load_dotenv
