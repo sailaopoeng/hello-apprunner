@@ -16,6 +16,3 @@ run:
   env:
     - name: OPENAI_API_KEY
       value: "66778899"
-  secrets:
-    - name: OPENAI_API_KEY
-      value-from: "arn:aws:secretsmanager:ap-southeast-1:073355457484:secret:openaikey-ieWY2g"
