@@ -18,4 +18,4 @@ run:
       value: "66778899"
   secrets:
     - name: OPENAI_API_KEY
-      value-from: "112233"
+      value-from: "arn:aws:secretsmanager:ap-southeast-1:073355457484:secret:openaikey-ieWY2g"
